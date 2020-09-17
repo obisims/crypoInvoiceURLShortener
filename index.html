@@ -52,6 +52,7 @@
     </script>
 
     <style>
+     
         .gas-frame {
             border: none;
             border-width: 0;
@@ -70,11 +71,118 @@
             height: 100%;
             width: 100%;
         }
+
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto','Poppins', sans-serif;
+}
+span{
+  text-align: center;
+ 
+}
+#tilde{
+  font-size: 215px;
+   line-height: 40px;
+ color: #291a2b;
+}
+html,body{
+  display: grid;
+  height: 100%;
+  place-items: center;
+  background: #f15b58;
+}
+label{
+  position: relative;
+  height: 125px;
+  width: 125px;
+  display: inline-block;
+  border: 20px solid rgba(255,255,255,0.0);
+  border-radius: 50%;
+  border-left-color: #291a2b;
+  animation: rotate 1.2s linear infinite;
+}
+@keyframes rotate {
+  50%{
+    border-left-color: #291a2b;
+  }
+  75%{
+    border-left-color: #291a2b;
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
+label .check-icon{
+  display: none;
+}
+label .check-icon:after{
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 28px;
+  transform: scaleX(-1) rotate(135deg);
+  height: 56px;
+  width: 28px;
+  border-top: 4px solid #291a2b;
+  border-right: 4px solid #f15b58;
+  transform-origin: left top;
+  animation: check-icon 0.8s ease;
+}
+@keyframes check-icon {
+  0%{
+    height: 0;
+    width: 0;
+    opacity: 1;
+  }
+  20%{
+    height: 0;
+    width: 28px;
+    opacity: 1;
+  }
+  40%{
+    height: 56px;
+    width: 28px;
+    opacity: 1;
+  }
+  100%{
+    height: 56px;
+    width: 28px;
+    opacity: 1;
+  }
+}
+input{
+  display: none; 
+}
+input:checked ~ label .check-icon{
+  display: block;
+}
+input:checked ~ label{
+  animation: none;
+  border-color: #291a2b;
+  transition: border 0.5s ease-out;
+}
     </style>
 
 </head>
 
 <body>
+    <input disabled type="checkbox" id="check">
+    <span>
+    <label for="check">
+      <div class="check-icon">
+        
+</div>
+      
+</label>
+    
+      <div id="tilde">~</div>
+    </span>
+
+
     <iframe class="gas-frame" src="https://script.google.com/macros/s/AKfycbyL-2g-NNVquJnBAEnjVfISV98d03Cay4gnrwcmWgmMP2eLNzXu/exec"></iframe>
 <script>
     // Check compatibility for the browser we're running this in
